@@ -6,11 +6,12 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install --silent
-#RUN npm install -g react-scripts@3.4.1 -g --silent
+COPY package.json yarn.lock* package-lock.json* ./
 
-#add app to container
+RUN npm install
+
+# add app to container and attempt build
 COPY . ./
+RUN npm run build || true
+
 CMD ["npm", "start"]
