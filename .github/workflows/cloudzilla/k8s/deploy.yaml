@@ -26,8 +26,8 @@ spec:
               cpu: 1000m
               memory: 1073741824
             requests:
-              cpu: 1000m
-              memory: 1000Mi
+              cpu: 50m
+              memory: 50Mi
           ports:
             - containerPort: 3000
           startupProbe:

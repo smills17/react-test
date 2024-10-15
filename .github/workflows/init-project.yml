@@ -5,10 +5,10 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_PREFIX: registry.cloudzilla.ai/lens-project-72e10c155c/
+  IMAGE_PREFIX: registry.cloudzilla.ai/lens-project-c63d4aed3c/
 
 jobs:
-  build-push:
+  cz-build-push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -22,7 +22,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: https://registry.cloudzilla.ai/
-          username: 'robot$lens-project-72e10c155c+imageuser'
+          username: 'robot$lens-project-c63d4aed3c+imageuser'
           password: '${{ secrets.DOCKER_PASSWORD }}'
 
       - name: downcase REPO
@@ -89,7 +89,7 @@ jobs:
           SECTION_K8S_API_URL: '${{ secrets.SECTION_K8S_API_URL }}'
           SECTION_API_TOKEN: '${{ secrets.SECTION_API_TOKEN }}'
           DOCKER_SERVER: 'registry.cloudzilla.ai'
-          DOCKER_USERNAME: 'robot$lens-project-72e10c155c+imageuser'
+          DOCKER_USERNAME: 'robot$lens-project-c63d4aed3c+imageuser'
           DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
           FULL_IMAGE_WITH_TAG: '${{ env.DOCKER_METADATA_OUTPUT_TAGS }}'
           POD_NAME: '${{ env.IMAGE_NAME }}'
