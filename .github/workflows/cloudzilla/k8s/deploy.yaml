@@ -23,11 +23,11 @@ spec:
                 name: console-project-env-secret
           resources:
             limits:
-              cpu: 1000m
-              memory: 1073741824
+              cpu: 2000m
+              memory: 536870912
             requests:
-              cpu: 50m
-              memory: 50Mi
+              cpu: 2000m
+              memory: 536870912
           ports:
             - containerPort: 3000
           startupProbe:
