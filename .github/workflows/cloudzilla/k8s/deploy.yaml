@@ -23,8 +23,8 @@ spec:
                 name: console-project-env-secret
           resources:
             limits:
-              cpu: 2000m
-              memory: 2147483648
+              cpu: 1000m
+              memory: 1073741824
             requests:
               cpu: 50m
               memory: 50Mi
